@@ -1,0 +1,13 @@
+{{define "content"}}
+<form action="/settings" method="POST">
+  <div class="form-group">
+    <label for="room_id">Room ID</label>
+    <input type="text" name="room_id" id="room_id" class="form-control" value="{{ .roomID }}">
+  </div>
+  <div class="form-group">
+    <label for="api_token">API Token</label>
+    <input type="password" name="api_token" id="api_token" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-block btn-default">Save</button>
+</form>
+{{end}}

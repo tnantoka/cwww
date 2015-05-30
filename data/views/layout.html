@@ -1,0 +1,48 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css?{{.now}}" rel="stylesheet">
+    <link href="/vendor/bootstrap/examples/non-responsive.css?{{.now}}" rel="stylesheet">
+    <link href="/vendor/bootstrap/examples/sticky-footer-navbar.css?{{.now}}" rel="stylesheet">
+    <link href="/css/app.css?{{.now}}" rel="stylesheet">
+    <link href="/css/{{.name}}.css?{{.now}}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index.html">CWWW</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="{{if .settings}}active{{end}}">
+            <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      {{template "content" .}}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted pull-right">
+          Powered by <a href="https://github.com/tnantoka/webwindow" target="_blank">WebWindow</a>.
+        </p>
+        <p class="text-muted text-left">
+          &copy; <a href="https://twitter.com/tnantoka" target="_blank">tnantoka</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/vendor/jquery-2.1.4.min.js?{{.now}}"></script>
+    <script src="/ww.js?{{.now}}"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js?{{.now}}"></script>
+    <script src="/js/app.js?{{.now}}"></script>
+    <script src="/js/{{.name}}.js?{{.now}}"></script>
+  </body>
+</html>
+{{end}}
