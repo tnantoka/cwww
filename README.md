@@ -7,6 +7,7 @@ A [ChatWork](https://www.chatwork.com/) client for a single room.
 ## Requirement
 
 - https://github.com/tnantoka/webwindow
+- https://github.com/tnantoka/chatsworth
 - https://github.com/jteeuwen/go-bindata
 - https://github.com/elazarl/go-bindata-assetfs
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/elazarl/go-bindata-assetfs"
+	. "github.com/tnantoka/chatsworth"
 	ww "github.com/tnantoka/webwindow"
 	"html/template"
 	"log"
@@ -58,10 +59,11 @@ func handleSettings(w http.ResponseWriter, r *http.Request) {
 
 func handleMessages(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	chatwork := Chatwork{
-		Settings: NewSettings(),
+	cw := Chatsworth{
+		RoomID:   NewSettings().RoomID,
+		APIToken: NewSettings().APIToken,
 	}
-	chatwork.PostMessage(r.Form["body"][0])
+	cw.PostMessage(r.Form["body"][0])
 	http.Redirect(w, r, "/index.html", http.StatusFound)
 }
 
